@@ -53,3 +53,4 @@ We are evaluating you as a backend ruby developer.  We will score your completio
 Files with TODOs:
 - views/games/new
 - controllers/games_controller
+- views/games/history
