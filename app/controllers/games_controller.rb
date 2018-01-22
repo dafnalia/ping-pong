@@ -9,11 +9,16 @@ class GamesController < ApplicationController
     
     if game.save
       # TODO Send success message to UI
-      redirect_to root_path
+      redirect_to history_path
     else
       # TODO Send error message to the UI
       render :new
     end
+  end
+  
+  def history
+    @games1 = Game.joins(:player2).where(player1_id: current_user.id)
+    @games2 = Game.joins(:player1).where(player2_id: current_user.id)
   end
   
   private

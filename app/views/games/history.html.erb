@@ -1,0 +1,36 @@
+<h1 class='page-header'>History</h1>
+
+<% if @games1.empty? and @games2.empty? %>
+
+<div class="alert alert-warning" role="alert">You haven't played yet.</div>
+
+<% else %>
+
+<!-- TODO: Use Bootstrap to show a friendlier look -->
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Opponent</th>
+    <th>Score</th>
+    <th>Result</th>
+  </tr>
+ 
+  <% @games1.each do |game| %>
+  <tr>
+    <td><%= game.game_date %></td>
+    <td><%= game.player2.email %></td>
+    <td><%= "#{game.score1} - #{game.score2}" %></td>
+    <td><%= (game.score1 > game.score2) ? "W" : "L" %></td>
+  </tr>
+  <% end %>
+  <% @games2.each do |game| %>
+  <tr>
+    <td><%= game.game_date %></td>
+    <td><%= game.player1.email %></td>
+    <td><%= "#{game.score2} - #{game.score1}" %></td>
+    <td><%= (game.score2 > game.score1) ? "W" : "L" %></td>
+  </tr>
+  <% end %>
+</table>
+
+<% end %>
