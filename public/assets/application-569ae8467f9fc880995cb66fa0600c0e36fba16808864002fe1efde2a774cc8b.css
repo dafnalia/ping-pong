@@ -1,3 +1,16 @@
+/* line 1, /usr/local/rvm/gems/ruby-2.3.4/gems/devise-bootstrap-views-0.0.11/app/assets/stylesheets/devise_bootstrap_views.scss */
+.float-none {
+  float: none;
+}
+
+/* line 5, /usr/local/rvm/gems/ruby-2.3.4/gems/devise-bootstrap-views-0.0.11/app/assets/stylesheets/devise_bootstrap_views.scss */
+.panel-heading {
+  padding: 15px;
+}
+/* line 7, /usr/local/rvm/gems/ruby-2.3.4/gems/devise-bootstrap-views-0.0.11/app/assets/stylesheets/devise_bootstrap_views.scss */
+.panel-heading h4 {
+  margin: 0px;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,7 +23,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require devise_bootstrap_views
- *= require_tree .
- *= require_self
+
+
+
  */
+
