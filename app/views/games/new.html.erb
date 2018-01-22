@@ -1,0 +1,53 @@
+<h1 class='page-header'>Log Game</h1>
+
+<!-- TODO: Make basic validations before sending to the server -->
+<%= form_for :game, url: games_path, :html => { :class => "container" } do |f| %>
+  <%= f.hidden_field :player1_id, :value => current_user.id %>
+  <div class="row">
+    <div class='col-sm-2'>
+      <div class="form-group">
+        <%= f.label :game_date, "Date played" %><br>
+        <%= f.text_field :game_date, :class => "span2 datepicker", 
+            :id => "game_date"%>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class='col-sm-4'>
+      <div class="form-group">
+        <%= f.label :player2_id, "Opponent" %><br>
+        <%= f.collection_select :player2_id, 
+            User.where.not(id: current_user.id), :id, :email, 
+            :selected => @game.player2_id   %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class='col-sm-4'>
+      <div class="form-group">
+        <%= f.label :score1, "Your score" %><br>
+        <%= f.text_field :score1, :value => @game.score1 %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class='col-sm-4'>
+      <div class="form-group">
+        <%= f.label :score2, "Their score" %><br>
+        <%= f.text_field :score2, :value => @game.score2 %>
+      </div>
+    </div>
+  </div>
+  <%= f.submit "Save", class: "btn btn-primary" %>
+  <!-- TODO: add Cancel button -->
+  <!-- <button type="button" class="btn btn-default">Cancel</button> -->
+<% end %>
+
+<!-- TODO: Move to a .js file -->
+<script type="text/javascript">
+  $(function () {
+    $('#game_date').datetimepicker({
+      format: 'YYYY-MM-DD'
+    });
+  });
+</script>

@@ -49,3 +49,7 @@ We are evaluating you as a backend ruby developer.  We will score your completio
 * 35 points for code quality (RESTful, simple, readable)
 * 20 points for tests coverage
 * 10 points for deployment
+
+Files with TODOs:
+- views/games/new
+- controllers/games_controller
