@@ -1,0 +1,28 @@
+<h1 class='page-header'>Leaderboard</h1>
+
+<% if @rankings.empty? %>
+
+<div class="alert alert-warning" role="alert">The leaderboard hasn't been created.</div>
+
+<% else %>
+
+<!-- TODO: Use Bootstrap to show a friendlier look -->
+<table>
+  <tr>
+    <th>Rank</th>
+    <th>E-mail</th>
+    <th>Score</th>
+    <th>Games played</th>
+  </tr>
+ 
+  <% @rankings.each do |player| %>
+  <tr>
+    <td><%= player.ranking %></td>
+    <td><%= player.user.email %></td>
+    <td><%= player.rating %></td>
+    <td><%= player.games_played %></td>
+  </tr>
+  <% end %>
+</table>
+
+<% end %>

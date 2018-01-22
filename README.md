@@ -54,3 +54,4 @@ Files with TODOs:
 - views/games/new
 - controllers/games_controller
 - views/games/history
+- views/games/leaderboard
